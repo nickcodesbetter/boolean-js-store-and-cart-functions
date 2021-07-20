@@ -164,7 +164,7 @@ function outOfStockProducts(products) {
   for (i = 0; i < products.length; i++) {
     const product = products[i];
     const noneLeft = product.quantity;
-    if (quantity <= 0) {
+    if (quantity === 0) {
       noneLeft.push(product);
     }
   }
@@ -181,21 +181,20 @@ console.log("These products are out of stock: ", noneLeft);
 // - that takes an array as a parameter
 // - returns an array of products that have a quantity that is less than 100 and have no incoming delivery
 
-function outOfStockProducts(products) {
-  const noneLeft = [];
+function productsThatNeedToBeOrdered(products) {
+  const orderSoon = [];
   for (i = 0; i < products.length; i++) {
     const product = products[i];
-    const noneLeft = product.quantity;
-    if (quantity <= 0) {
-      noneLeft.push(product);
+    const orderSoon = product.quantity;
+    if (quantity < 100 AND incomingDelivery = false)   {
+      orderSoon.push(product);
     }
   }
-  return noneLeft;
+  return orderSoon;
 }
-const outOfStockProducts = function();
 const productsThatNeedToBeOrdered = function();
 
-console.log("These products are out of stock: ", noneLeft);
+console.log("These products are out of stock soon: ", orderSoon);
 
 
 // ----- Section ----- **
