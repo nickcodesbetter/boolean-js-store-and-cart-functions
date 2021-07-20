@@ -141,16 +141,39 @@ const under1000 = allProductsUnder1000(store.products);
 // Write a function here...
 // - that takes an array as a parameter
 // - returns an array of products that have an incoming delivery
-
-// const productsThatNeedToBeReceived = function();
+function productsThatNeedToBeReceived(products) {
+  const incomingProducts = [];
+  for (i = 0; i < products.length; i++) {
+    const product = products[i];
+    const incomingProducts = product.incomingDelivery;
+    if (incomingDelivery <= true) {
+      incomingProducts.push(product);
+    }
+  }
+  return incomingProducts;
+}
+const productsThatNeedToBeReceived = function();
 
 // ----- Section -----
 
 // Write a function here...
 // - that takes an array as a parameter
 // - returns an array of products that are out of stock
+function outOfStockProducts(products) {
+  const noneLeft = [];
+  for (i = 0; i < products.length; i++) {
+    const product = products[i];
+    const noneLeft = product.quantity;
+    if (quantity <= 0) {
+      noneLeft.push(product);
+    }
+  }
+  return noneLeft;
+}
+const outOfStockProducts = function();
 
-// const outOfStockProducts = function();
+console.log("These products are out of stock: ", noneLeft);
+
 
 // ----- Section -----
 
@@ -158,7 +181,22 @@ const under1000 = allProductsUnder1000(store.products);
 // - that takes an array as a parameter
 // - returns an array of products that have a quantity that is less than 100 and have no incoming delivery
 
-// const productsThatNeedToBeOrdered = function();
+function outOfStockProducts(products) {
+  const noneLeft = [];
+  for (i = 0; i < products.length; i++) {
+    const product = products[i];
+    const noneLeft = product.quantity;
+    if (quantity <= 0) {
+      noneLeft.push(product);
+    }
+  }
+  return noneLeft;
+}
+const outOfStockProducts = function();
+const productsThatNeedToBeOrdered = function();
+
+console.log("These products are out of stock: ", noneLeft);
+
 
 // ----- Section ----- **
 
