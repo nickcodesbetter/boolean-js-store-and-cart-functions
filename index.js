@@ -124,7 +124,7 @@ function allProductsUnder1000(products) {
   for (i = 0; i < products.length; i++) {
     const product = products[i];
     const price = product.price;
-    if (price <= 1000) {
+    if (price < 1000) {
       under1000.push(product);
     }
   }
@@ -132,6 +132,10 @@ function allProductsUnder1000(products) {
 }
 
 const under1000 = allProductsUnder1000(store.products);
+
+// console.log("Products under £1000: ", under1000);
+
+
 // const cheapProducts = function();
 
 // console.log("cheapProducts: ", cheapProducts);
@@ -141,38 +145,40 @@ const under1000 = allProductsUnder1000(store.products);
 // Write a function here...
 // - that takes an array as a parameter
 // - returns an array of products that have an incoming delivery
-function productsThatNeedToBeReceived(products) {
-  const incomingProducts = [];
-  for (i = 0; i < products.length; i++) {
-    const product = products[i];
-    const incomingProducts = product.incomingDelivery;
-    if (incomingDelivery <= true) {
-      incomingProducts.push(product);
-    }
-  }
-  return incomingProducts;
-}
-const productsThatNeedToBeReceived = function();
+// function productsThatNeedToBeReceived(products) {
+//   const incomingProducts = [];
+//   for (i = 0; i < products.length; i++) {
+//     const product = products[i];
+//     const incomingProducts = product.stock.incomingDelivery;
+//     if (incomingDelivery === true) {
+//       incomingProducts.push(product);
+//     }
+//   }
+//   return incomingProducts;
+// }
+// const incomingProducts = productsThatNeedToBeReceived(store.products);
+
+// console.log("Incoming Products: ", incomingProducts);
 
 // ----- Section -----
 
 // Write a function here...
 // - that takes an array as a parameter
 // - returns an array of products that are out of stock
-function outOfStockProducts(products) {
-  const noneLeft = [];
-  for (i = 0; i < products.length; i++) {
-    const product = products[i];
-    const noneLeft = product.quantity;
-    if (quantity === 0) {
-      noneLeft.push(product);
-    }
-  }
-  return noneLeft;
-}
-const outOfStockProducts = function();
+// function outOfStockProducts(products) {
+//   const noneLeft = [];
+//   for (i = 0; i < products.length; i++) {
+//     const product = products[i];
+//     const noneLeft = product.quantity;
+//     if (quantity === 0) {
+//       noneLeft.push(product);
+//     }
+//   }
+//   return noneLeft;
+// }
+// const noneLeft = outOfStockProducts(store.products);
 
-console.log("These products are out of stock: ", noneLeft);
+// console.log("These products are out of stock: ", noneLeft);
 
 
 // ----- Section -----
@@ -181,20 +187,33 @@ console.log("These products are out of stock: ", noneLeft);
 // - that takes an array as a parameter
 // - returns an array of products that have a quantity that is less than 100 and have no incoming delivery
 
-function productsThatNeedToBeOrdered(products) {
-  const orderSoon = [];
-  for (i = 0; i < products.length; i++) {
-    const product = products[i];
-    const orderSoon = product.quantity;
-    if (quantity < 100 AND incomingDelivery = false)   {
-      orderSoon.push(product);
-    }
-  }
-  return orderSoon;
-}
-const productsThatNeedToBeOrdered = function();
+// function productsThatNeedToBeOrdered(products) {
+//   const orderSoon = [];
+//   for (i = 0; i < products.length; i++) {
+//     const product = products[i];
+//     const orderSoon = product.quantity;
+//     if (quantity <= 100 && incomingDelivery === false)   {
+//       orderSoon.push(product);
+//     }
+//   }
+//   return orderSoon;
+// }
+// const orderSoon = productsThatNeedToBeOrdered(store.products);
 
-console.log("These products are out of stock soon: ", orderSoon);
+// console.log("These products are out of stock soon: ", orderSoon);
+
+
+
+
+
+
+
+// Step by Step process
+
+
+
+
+
 
 
 // ----- Section ----- **
@@ -203,8 +222,16 @@ console.log("These products are out of stock soon: ", orderSoon);
 // - that takes an array as a parameter
 // - returns an array of products of the type "tablet"
 
-// const tablets = function();
+function findTablets(appleProducts) {
+    // console.log("Inside findTablets: ", appleProducts);
 
+
+
+  }
+
+const tablets = findTablets(store.products);
+
+// console.log("Tablets:", tablets)
 // ----- Section -----
 
 // Write a function here...
@@ -287,15 +314,37 @@ const cart = [
 
 // Write a function here...
 // - that takes an array as a parameter
-// - returns a number that rerpresents the total of the items in the cart
+// - returns a number that rerpresents the total price of the items in the cart
 
-// const totalPrice = function()
 
 // ----- Section ----- **
 
 // Write a function here...
 // - that takes an array as a parameter
 // - returns a number that rerpresents the quantity of the items in the cart
+
+function cartQuantityCalculator(cart) {
+  // console.log("Inside cartQuantityCalculator: ", cart)
+  
+    let totalQuantity = 0
+  
+    for (let i = 0; i < cart.length; i++) {
+      const item = cart[i];
+      const quantity = item.quantity;
+  
+      // console.log("Iteration #", i + 1)
+      // console.log("Total at the start of iteration:", totalQuantity)
+      // console.log("Quantity: ", quantity)
+      totalQuantity = totalQuantity + quantity
+  }
+  
+  return totalQuantity
+  
+  }
+  
+  const totalQuantity = cartQuantityCalculator(cart)
+  
+  // console.log("totalQuantity: ", totalQuantity);
 
 // const quantityOfItemsInCart = function()
 
@@ -306,6 +355,68 @@ const cart = [
 // - returns a string of the information about a product in the cart
 //      => "iPhone 12 | Mobile - £1400 x 2 || £2800"
 
+
+
+
+
+
+// Did not work with loop - spent a fair bit on this
+
+
+// function informationFinder(cart) {
+//   console.log("Inside informationFinder: ", cart)
+  
+//     let itemInfo = null
+  
+//     for (let i = 0; i < cart.length; i++) {
+//       const item = cart[i];
+//       const product = item.product;
+//       const quantity = item.quantity;
+  
+//       console.log("Iteration #", i + 1)
+//       console.log("Product info ", product)
+//       console.log("Quantity info: ", quantity)
+//       itemInfo = product + quantity
+      
+//       const = `${name} | ${type - price * quantity} | ${total}\n`;
+
+//     }
+  
+//   return itemInfo
+  
+//   }
+  
+//   const itemInfo = informationFinder(cart)
+  
+//   console.log("itemInfo: ", itemInfo);
+
+
+// Did not work with loop
+
+
+
+
+
+function informationFinder(item) {
+  console.log("Inside informationFinder: ", item)
+    
+  const name = item.product.name;
+  const type = item.product.type;
+  const price = item.product.price;
+  const quantity = item.quantity;
+  const total = price * quantity;
+
+  // console.log(total);
+
+  return `${name} | ${type} - ${price} x ${quantity} || ${total} \n`;
+}
+
+// const recieptRow = informationFinder(cart[2]);
+// console.log(recieptRow);
+  
+  
+
+
 // const recieptRow = function()
 
 // ----- Section ----- **
@@ -315,6 +426,35 @@ const cart = [
 // - returns a string with the variosu rows on the reciept
 // TIP: Re-use the above function for "receiptRow"
 
+function multipleRows(cart){
+console.log("Multiple rows: ", cart)
+
+for (let i = 0; i < multipleRows.informationFinder; i++) {
+  //       const item = cart[i];
+  //       const product = item.product;
+  //       const quantity = item.quantity;
+  
+}
+
+}
+
+function informationFinder(item) {
+
+  console.log("Inside informationFinder: ", item)
+
+  const name = item.product.name;
+  const type = item.product.type;
+  const price = item.product.price;
+  const quantity = item.quantity;
+  const total = price * quantity;
+
+  // console.log(total);
+
+  return `${name} | ${type} - ${price} x ${quantity} || ${total} \n`;
+}
+
+const recieptRow = informationFinder(cart[1]);
+console.log(recieptRow);
 // const receiptMessage = function()
 
 // console.log("receiptMessage: ", receiptMessage)
